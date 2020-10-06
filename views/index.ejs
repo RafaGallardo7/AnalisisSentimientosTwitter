@@ -1,0 +1,19 @@
+<%- include('components/header', {data: 'navbar'}); %>
+
+<body class="bg-main">
+  
+  <%- include('components/navbar', {data: 'navbar'}); %>
+
+  <div class="bodyDiv">  
+    <h1 class="txt-white">Escriba un texto para buscarlo en Twitter</h1>
+    <form align="center" id="query-form" action="/analisis" method="post">    
+      <div class="form-group">
+        <input class="form-control" type="text" name="query" id="query" value="" required />
+        <br>
+        <input class="mt-2 btn btn-lg btn-secondary" type="submit" value="Analizar"/>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

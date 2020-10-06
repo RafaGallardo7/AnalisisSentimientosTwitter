@@ -1,0 +1,64 @@
+<%- include('components/header', {data: 'header'}); %>
+
+<body class="bg-main">
+  
+  <%- include('components/navbar', {data: 'navbar'}); %>
+
+  <div class="bodyDiv">  
+        <h1 class="txt-white">Análisis de sentimientos de Tweets</h1>
+        <label>Búsqueda</label>
+        <h3 class="txt-white"><%= res.query %></h3>
+
+        <div id="piechart" class="bg-main" style="width: 900px; height: 500px;"></div>
+        <table id="myTable" class="txt-white" align="center">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>               
+                    <!-- <th scope="col">User</th>                -->
+                    <th scope="col"> Tweet</th>                    
+                    <th scope="col">Positivo</th>
+                    <th scope="col">Negativo</th>
+                    <th scope="col"> Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var item in res.tweets) { %>
+                <tr class="" style="height:70px">
+                    <th scope="row"><%= parseInt(item)+1 %></th>
+                    <!-- <td> <%= res.tweets[item].userName %></td> -->
+                    <td> <%= res.tweets[item].tweet %></td>                                                            
+                    <td> <%= res.tweets[item].positive %></td>
+                    <td> <%= res.tweets[item].negative %></td>
+                    <td> <%= res.tweets[item].score %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var c1 = <%= res.positiveTweets %>;
+            var c2 = <%= res.negativeTweets %>;
+            let c3 = 100 - c1 - c2;
+            var data = google.visualization.arrayToDataTable([
+                ['Sentiment', 'Percentage'],
+                ['Positive', c1],
+                ['Negative', c2],
+                ['Neutral', c3]
+            ]);
+            var options = {
+                colors: ['#00ff00', '#ff0000', '#C0C0C0'],
+                pieHole: 0.3,                
+                backgroundColor: '#2f3b84',
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+
+</html>
