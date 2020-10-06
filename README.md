@@ -22,4 +22,4 @@ Se puede buscar cualquier texto que se desee en español o usar las búsquedas p
 
 ![Image](screenshots/main.png)<br>
 ![Image](screenshots/analisis1.png)<br>
-![Image](screenshots/analisis3.png)<br>
+![Image](screenshots/analisis2.png)<br>
