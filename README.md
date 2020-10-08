@@ -9,7 +9,7 @@ Se puede buscar cualquier texto que se desee en español o usar las búsquedas p
 <br>
 <br>
 
-# Para hacer funcionar el proyecto
+# Pasos
 1. Crear cuenta de desarrollador en Twitter en https://developer.twitter.com/en/apps
 2. Renombrar el archivo config/properties.json.example a config/properties.json
 3. Actualizar el archivo config/properties.json. con las credenciales obtenidas en la cuenta de desarrollador de twitter
@@ -19,6 +19,9 @@ Se puede buscar cualquier texto que se desee en español o usar las búsquedas p
 
 <br>
 <br>
+
+# Demo
+https://analisis-tweets.mybluemix.net/
 
 ![Image](screenshots/main.png)<br>
 ![Image](screenshots/analisis1.png)<br>
