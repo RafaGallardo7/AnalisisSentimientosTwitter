@@ -7,3 +7,4 @@
 worksheet.js
 *.log
 /config/properties.json
+/README.txt
